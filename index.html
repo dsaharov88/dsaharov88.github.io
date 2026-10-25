@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Я досягну! — підтримка | I Will Achieve! Support</title>
+<meta name="description" content="Підтримка застосунку Я досягну! / Я добьюсь! / I Will Achieve!">
+<style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#18243a;background:#f7f8fc}*{box-sizing:border-box}body{margin:0}.container{max-width:860px;margin:auto;padding:25px 18px}header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.brand{font-weight:750;font-size:20px}nav{display:flex;gap:8px}button{cursor:pointer;border:1px solid #d9e2f1;border-radius:9px;padding:9px 12px;background:white;color:#18243a;font:inherit}button[aria-pressed="true"]{background:#345bbb;color:white}.panel{background:white;border:1px solid #e1e7f0;border-radius:20px;padding:clamp(22px,5vw,48px);box-shadow:0 8px 30px #192a4910;margin-top:24px}section{display:none}section.active{display:block}h1{font-size:clamp(32px,5vw,46px);letter-spacing:-.04em;margin:0 0 15px}h2{font-size:21px;margin:30px 0 8px}p,li{line-height:1.65}.lead{font-size:19px;color:#566477}.contact{margin:24px 0;padding:22px;background:#f0f5ff;border:1px solid #dbe6fc;border-radius:13px}.contact strong{display:block;margin-bottom:7px}a{color:#285cb8;overflow-wrap:anywhere}footer{color:#677386;font-size:14px;margin-top:25px}@media(max-width:480px){nav{width:100%}button{flex:1}}
+</style>
+</head>
+<body>
+<div class="container">
+<header><div class="brand">Я досягну! / I Will Achieve!</div><nav aria-label="Language"><button data-lang="uk" aria-pressed="true">Українська</button><button data-lang="ru" aria-pressed="false">Русский</button><button data-lang="en" aria-pressed="false">English</button></nav></header>
+<main class="panel">
+<section lang="uk" id="uk" class="active"><h1>Я досягну!</h1><p class="lead">Застосунок для цілей, звичок і щоденного прогресу. Плануйте день, зберігайте мотивацію та рухайтеся вперед у власному темпі.</p><h2>Служба підтримки</h2><p>Якщо у вас є запитання про роботу застосунку, обліковий запис, Premium або ви помітили помилку, напишіть нам.</p><div class="contact"><strong>Контактна електронна пошта</strong><a href="mailto:dsaharov88@gmail.com?subject=I%20Will%20Achieve%20Support">dsaharov88@gmail.com</a></div><h2>Як отримати допомогу</h2><p>Коротко опишіть проблему. За можливості зазначте модель пристрою, версію операційної системи та застосунку; додайте знімок екрана. Не надсилайте паролі або платіжні дані.</p><h2>Про застосунок</h2><p>Відстежуйте цілі та звички, користуйтеся щоденником, плануйте справи й аналізуйте прогрес. Premium надає додаткові можливості та прибирає рекламу.</p></section>
+<section lang="ru" id="ru"><h1>Я добьюсь!</h1><p class="lead">Приложение для целей, привычек и ежедневного прогресса. Планируйте день, сохраняйте мотивацию и двигайтесь вперёд в своём темпе.</p><h2>Служба поддержки</h2><p>Если у вас есть вопросы о работе приложения, учётной записи, Premium или вы обнаружили ошибку, напишите нам.</p><div class="contact"><strong>Контактная электронная почта</strong><a href="mailto:dsaharov88@gmail.com?subject=I%20Will%20Achieve%20Support">dsaharov88@gmail.com</a></div><h2>Как получить помощь</h2><p>Кратко опишите проблему. По возможности укажите модель устройства, версии операционной системы и приложения; приложите скриншот. Не отправляйте пароли или платёжные данные.</p><h2>О приложении</h2><p>Отслеживайте цели и привычки, ведите дневник, планируйте дела и анализируйте прогресс. Premium открывает дополнительные возможности и убирает рекламу.</p></section>
+<section lang="en" id="en"><h1>I Will Achieve!</h1><p class="lead">An app for goals, habits, and daily progress. Plan your day, stay motivated, and move forward at your own pace.</p><h2>Support</h2><p>If you have questions about the app, your account, Premium, or encounter a bug, please contact us.</p><div class="contact"><strong>Support email</strong><a href="mailto:dsaharov88@gmail.com?subject=I%20Will%20Achieve%20Support">dsaharov88@gmail.com</a></div><h2>How to get help</h2><p>Describe the issue briefly. If possible, include your device model, operating system and app versions, and a screenshot. Do not send passwords or payment details.</p><h2>About the app</h2><p>Track goals and habits, keep a journal, plan tasks, and review progress. Premium unlocks additional features and removes ads.</p></section>
+</main>
+<footer>2026 · I Will Achieve! · <a href="mailto:dsaharov88@gmail.com">dsaharov88@gmail.com</a></footer>
+</div>
+<script>
+const buttons=[...document.querySelectorAll('button[data-lang]')];
+function show(lang){if(!['uk','ru','en'].includes(lang))lang='uk';document.documentElement.lang=lang;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===lang)));document.querySelectorAll('main section').forEach(s=>s.classList.toggle('active',s.id===lang));}
+buttons.forEach(b=>b.addEventListener('click',()=>show(b.dataset.lang)));
+const lang=(navigator.language||'uk').toLowerCase();show(location.hash.slice(1)|| (lang.startsWith('ru')?'ru':lang.startsWith('en')?'en':'uk'));
+</script>
+</body></html>
